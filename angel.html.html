@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Cañizares ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Center Content */
+
+.container{
+    text-align:center;
+    z-index:2;
+}
+
+/* Heart */
+
+.heart{
+    position:relative;
+    width:170px;
+    height:170px;
+    background:#ff1744;
+    transform:rotate(-45deg);
+    margin:auto;
+    animation:heartbeat 1s infinite;
+    box-shadow:
+        0 0 30px #ff1744,
+        0 0 60px #ff1744,
+        0 0 120px #ff1744;
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+    position:absolute;
+    width:170px;
+    height:170px;
+    background:#ff1744;
+    border-radius:50%;
+}
+
+.heart::before{
+    top:-85px;
+    left:0;
+}
+
+.heart::after{
+    left:85px;
+    top:0;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:rotate(-45deg) scale(1);}
+    25%{transform:rotate(-45deg) scale(1.15);}
+    50%{transform:rotate(-45deg) scale(1);}
+    75%{transform:rotate(-45deg) scale(1.18);}
+}
+
+/* Name */
+
+.name{
+    margin-top:120px;
+    font-size:40px;
+    font-weight:bold;
+    color:white;
+    letter-spacing:4px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+from{
+text-shadow:
+0 0 10px white,
+0 0 20px #ff0080,
+0 0 40px #ff0080;
+}
+
+to{
+text-shadow:
+0 0 20px white,
+0 0 40px #ff0080,
+0 0 80px #ff0080;
+}
+
+}
+
+/* Footer */
+
+footer{
+    position:fixed;
+    bottom:20px;
+    width:100%;
+    text-align:center;
+    color:white;
+    z-index:2;
+    animation:fadeUp 2s ease;
+}
+
+footer p{
+    margin:5px 0;
+}
+
+footer .creator{
+    color:#00e5ff;
+    font-weight:bold;
+    text-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff,
+        0 0 40px #00e5ff;
+}
+
+footer .dedication{
+    color:#ff4d88;
+    font-size:18px;
+    text-shadow:
+        0 0 10px #ff4d88,
+        0 0 25px #ff4d88;
+}
+
+footer .copyright{
+    color:#888;
+    font-size:13px;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* Floating Hearts */
+
+.particle{
+    position:absolute;
+    color:#ff4d6d;
+    animation:float linear infinite;
+    opacity:.8;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) scale(.5);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh) scale(1.5);
+opacity:0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="heart"></div>
+
+<div class="name">
+ANGEL CAÑIZARES
+</div>
+
+</div>
+
+<footer>
+
+<p>
+Made with ❤️ by
+<span class="creator">JHIED ERONG</span>
+</p>
+
+<p class="dedication">
+Forever inspired by <strong>ANGEL CAÑIZARES</strong> ✨
+</p>
+
+<p class="copyright">
+© 2026 • All Rights Reserved
+</p>
+
+</footer>
+
+<script>
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.className="particle";
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.top="110vh";
+
+heart.style.fontSize=(10+Math.random()*30)+"px";
+
+heart.style.animationDuration=(4+Math.random()*6)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(createHeart,250);
+
+</script>
+
+</body>
+</html>
